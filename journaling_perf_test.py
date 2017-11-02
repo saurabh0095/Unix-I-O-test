@@ -87,6 +87,9 @@ def print_statistics():
 
 
 def start_func():
+	if len(sys.argv) != 4:
+                print "Incorrect usage.\n\tUse as: " + sys.argv[0] + " <filename to write> <filesize in bytes> <pattern to write>"
+                quit()
         filename=sys.argv[1]
         filesize=sys.argv[2] 
         write_pattern=sys.argv[3]
