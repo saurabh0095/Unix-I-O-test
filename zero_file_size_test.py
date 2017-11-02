@@ -17,7 +17,7 @@
 #  Linus Torvalds Upset over Ext3 and Ext4 http://www.linux-magazine.com/Online/News/Linus-Torvalds-Upset-over-Ext3-and-Ext4 
 
 
-import os, time
+import os, time, sys
 sleep_time = 1         # Interval between file creation
 max_file_count = 3600
 
@@ -27,6 +27,9 @@ def create_file(newFileName):
         os.close(newFileDiscriptor)
 
 def create_file_loop():
+        if len(sys.argv) != 1:
+                print "Incorrect usage. No argument required.\n\tUse as: " + sys.argv[0]
+                quit()
         timeStamp =  int(time.time()) #Time when script starts up (at system boot)
         newDirName = "zero_file_size_test_%s" %(timeStamp)
         os.mkdir(newDirName)
