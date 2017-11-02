@@ -1,4 +1,3 @@
-
 #!/bin/python
 #
 # Objective	:This will check the latency of write for various values of dirty pages.
