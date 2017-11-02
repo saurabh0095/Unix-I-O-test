@@ -75,7 +75,10 @@ def print_statistics():
 	fo.close()
 	print "Created file: ", stat_file, " with statistics of the run"
 
-def start_func():	
+def start_func():
+	if len(sys.argv) != 3:
+                print "Incorrect usage.\n\tUse as: " + sys.argv[0] + " <filename to write> <pattern to write>"
+                quit()
 	filename=sys.argv[1]
 	write_pattern=sys.argv[2]
 	filesize = int(os.path.getsize(filename))
